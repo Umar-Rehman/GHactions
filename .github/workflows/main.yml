@@ -13,7 +13,7 @@ jobs:
     container: riversafe/eze-cli:latest
     steps:
       - run: |
-          eze test
+          sudo eze test
 # jobs:
 #   testbox:
 #     steps:  
