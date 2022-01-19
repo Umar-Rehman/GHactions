@@ -6,8 +6,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      
     - name: run eze
-    - run: |
+      run: |
         ls -a
         ls ..
         pwd
