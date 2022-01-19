@@ -15,10 +15,13 @@ jobs:
   test:
     name: Run test suite
     runs-on: ubuntu-latest
+    container:
+      image: riversafe/eze-cli:latest
+      options: --user root
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-    - name: Build docker images
-      run: docker pull riversafe/eze-cli:latest
+#     - name: Build docker images
+#       run: docker pull riversafe/eze-cli:latest
     - name: Run tests
-      run: sudo docker run -t -v "$(pwd)":/data riversafe/eze-cli test
+      run: docker run -t -v "$(pwd)":/data riversafe/eze-cli test
