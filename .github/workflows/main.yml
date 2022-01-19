@@ -10,4 +10,4 @@ jobs:
     steps:  
     - uses: actions/checkout@v2
     - name: What tools
-      run: apt install docker-ce && docker run -t riversafe/eze-cli tools list
+      run: echo "hello world"
