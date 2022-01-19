@@ -9,9 +9,9 @@ jobs:
       
     - name: run eze
       run: |
-        cd ..
+        chmod ugo+rwx ${pwd}
         docker pull riversafe/eze-cli:latest
-        sudo docker run -t -v "$(pwd)":/data riversafe/eze-cli test
+        docker run -t -v "$(pwd)":/data riversafe/eze-cli test
 #   container:
 #     runs-on: ubuntu-latest
 #     container: riversafe/eze-cli:latest
