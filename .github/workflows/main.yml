@@ -12,46 +12,14 @@ jobs:
         chmod ugo+rwx .
         docker pull riversafe/eze-cli:latest
         docker run -t -v "$(pwd)":/data riversafe/eze-cli test
-    - name: 'Upload Artifact'
+    - name: Upload EZE Reports as Artifact'
       uses: actions/upload-artifact@v2
       with:
-        name: my-artifact
+        name: eze_reports
         path: |
             ./eze_junit_report.xml
             ./eze_report.json
-            !/*.md
-
-          
-#   container:
-#     runs-on: ubuntu-latest
-#     container: riversafe/eze-cli:latest
-#     steps:
-#       - run: |
-#           eze test
-# jobs:
-#   testbox:
-#     steps:  
-#     - uses: actions/checkout@v2
-# #     - name: What tools
-# #       run: echo "hello world"
-#     runs-on: ubuntu-latest
-#     container:
-#       image: riversafe/eze-cli:latest
-#       options: --user root
-      
-# jobs:
-#   test:
-#     name: Run test suite
-#     runs-on: ubuntu-latest
-#     container:
-#       image: riversafe/eze-cli:latest
-#       options: --user root
-#     steps:
-#     - name: Checkout code
-#       uses: actions/checkout@v2
-# #     - name: Build docker images
-# #       run: docker pull riversafe/eze-cli:latest
-#     - name: install deps
-#       run: apt-get install docker-ce
-#     - name: Run tests
-#       run: docker run -t -v "$(pwd)":/data riversafe/eze-cli test
+    - name: Download EZE Reports Artifact
+      uses: actions/download-artifact@v2
+      with:
+          name: eze_reports
