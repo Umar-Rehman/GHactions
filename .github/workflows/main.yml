@@ -9,9 +9,7 @@ jobs:
       
     - name: run eze
       run: |
-        ls -a
-        ls ..
-        pwd
+        cd ..
         docker pull riversafe/eze-cli:latest
         sudo docker run -t -v "$(pwd)":/data riversafe/eze-cli test
 #   container:
