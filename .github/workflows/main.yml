@@ -4,9 +4,12 @@ jobs:
   vm:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          docker pull riversafe/eze-cli:latest
-          docker run -t -v "$(pwd)":/data riversafe/eze-cli test
+    - name: Checkout code and run eze
+      uses: actions/checkout@v2
+    - run: |
+        ls -a
+        docker pull riversafe/eze-cli:latest
+        docker run -t -v "$(pwd)":/data riversafe/eze-cli test
 #   container:
 #     runs-on: ubuntu-latest
 #     container: riversafe/eze-cli:latest
