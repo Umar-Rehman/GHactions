@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: riversafe/eze-cli:latest
+      options: --user root
     steps:  
     - uses: actions/checkout@v2
     - name: What tools
