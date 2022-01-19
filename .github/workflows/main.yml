@@ -9,7 +9,7 @@ jobs:
       
     - name: run eze
       run: |
-        chmod ugo+rwx ${pwd}
+        chmod ugo+rwx .
         docker pull riversafe/eze-cli:latest
         docker run -t -v "$(pwd)":/data riversafe/eze-cli test
 #   container:
