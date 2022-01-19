@@ -7,7 +7,10 @@ jobs:
     - name: Checkout code and run eze
       uses: actions/checkout@v2
     - run: |
-        ls
+        ls -a
+        ls .
+        ls ..
+        pwd
         docker pull riversafe/eze-cli:latest
         sudo docker run -t -v "$(pwd)":/data riversafe/eze-cli test
 #   container:
