@@ -5,13 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          docker volume create "${pwd}":/data
-  container:
-    runs-on: ubuntu-latest
-    container: riversafe/eze-cli:latest
-    steps:
-      - run: |
-          eze test
+          docker pull riversafe/eze-cli:latest
+          docker run -t -v "$(pwd)":/data riversafe/eze-cli test
+#   container:
+#     runs-on: ubuntu-latest
+#     container: riversafe/eze-cli:latest
+#     steps:
+#       - run: |
+#           eze test
 # jobs:
 #   testbox:
 #     steps:  
