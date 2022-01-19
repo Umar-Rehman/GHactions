@@ -1,0 +1,8 @@
+name: container
+on: push
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    container:
+      image: riversafe/eze-cli:latest
