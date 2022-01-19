@@ -17,8 +17,9 @@ jobs:
       with:
         name: my-artifact
         path: |
-            .
-            ./*.md
+            ./eze_junit_report.xml
+            ./eze_report.json
+            !/*.md
 
           
 #   container:
