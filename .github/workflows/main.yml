@@ -1,19 +1,17 @@
 name: container
 on: push
 jobs:
-#   vm:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - run: |
-#           echo This job does not specify a container.
-#           echo It runs directly on the virtual machine.
-#         name: Run on VM
+  vm:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          docker volume create "${pwd}":/data
   container:
     runs-on: ubuntu-latest
     container: riversafe/eze-cli:latest
     steps:
       - run: |
-          sudo eze test
+          eze test
 # jobs:
 #   testbox:
 #     steps:  
