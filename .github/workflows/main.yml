@@ -12,6 +12,7 @@ jobs:
         chmod ugo+rwx .
         docker pull riversafe/eze-cli:latest
         docker run -t -v "$(pwd)":/data riversafe/eze-cli test
+        git add . && git commit -m "report files generated" && git push
 #   container:
 #     runs-on: ubuntu-latest
 #     container: riversafe/eze-cli:latest
