@@ -1,13 +1,24 @@
 name: container
 on: push
 
+# jobs:
+#   testbox:
+#     steps:  
+#     - uses: actions/checkout@v2
+# #     - name: What tools
+# #       run: echo "hello world"
+#     runs-on: ubuntu-latest
+#     container:
+#       image: riversafe/eze-cli:latest
+#       options: --user root
 jobs:
-  testbox:
+  test:
+    name: Run test suite
     runs-on: ubuntu-latest
-    container:
-      image: riversafe/eze-cli:latest
-      options: --user root
-    steps:  
-    - uses: actions/checkout@v2
-    - name: What tools
-      run: echo "hello world"
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Build docker images
+      run: docker pull riversafe/eze-cli:latest
+    - name: Run tests
+      run: docker run -t -v "$(pwd)":/data riversafe/eze-cli test
