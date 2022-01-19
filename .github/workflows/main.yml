@@ -23,5 +23,7 @@ jobs:
       uses: actions/checkout@v2
 #     - name: Build docker images
 #       run: docker pull riversafe/eze-cli:latest
+    - name: install deps
+      run: sudo apt-get docker
     - name: Run tests
       run: docker run -t -v "$(pwd)":/data riversafe/eze-cli test
