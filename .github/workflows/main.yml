@@ -21,4 +21,4 @@ jobs:
     - name: Build docker images
       run: docker pull riversafe/eze-cli:latest
     - name: Run tests
-      run: docker run -t -v "$(pwd)":/data riversafe/eze-cli test
+      run: sudo docker run -t -v "$(pwd)":/data riversafe/eze-cli test
