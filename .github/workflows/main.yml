@@ -4,11 +4,11 @@ jobs:
   vm:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code and run eze
+    - name: Checkout code
       uses: actions/checkout@v2
+    - name: run eze
     - run: |
         ls -a
-        ls .
         ls ..
         pwd
         docker pull riversafe/eze-cli:latest
