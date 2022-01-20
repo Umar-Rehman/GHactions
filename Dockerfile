@@ -12,5 +12,5 @@ USER ezeuser
 # run with "docker run --rm -v $(pwd -W):/data eze-docker --version"
 # USER root
 RUN eze test
-RUN ls -a
+RUN cd reports && ls -a
 # ENTRYPOINT [ "eze", "test" ]
