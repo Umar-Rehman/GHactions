@@ -13,10 +13,10 @@ jobs:
 #         chmod ugo+rwx .
 #         docker pull riversafe/eze-cli:latest
 #         docker run -t -v "$(pwd)":/data riversafe/eze-cli test
-#     - name: Upload EZE Reports as Artifact'
-#       uses: actions/upload-artifact@v2
-#       with:
-#         name: eze_reports
-#         path: |
-#             ./eze_junit_report.xml
-#             ./eze_report.json
+    - name: Upload EZE Reports as Artifact'
+      uses: actions/upload-artifact@v2
+      with:
+         name: eze_reports
+         path: |
+             ./eze_junit_report.xml
+             ./eze_report.json
