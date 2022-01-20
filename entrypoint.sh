@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash\r
 set -e
 chmod -R ugo+rwx ./*
 docker pull riversafe/eze-cli:latest
