@@ -3,9 +3,8 @@ on: push
 jobs:
   vm:
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
-    - name: login git
-      run: git login -u ${{USERNAME}} -P ${{PASSWORD}}
     - name: Checkout code
       uses: actions/checkout@v2
       with:
