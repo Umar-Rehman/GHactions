@@ -20,9 +20,17 @@ jobs:
         cd reports/python
         ls -a
     - name: Upload EZE Reports as Artifact'
-      uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v2
       with:
-         name: eze_reports
-         path: |
-             ./reports/python/eze_junit_report.xml
-             ./reports/python/eze_report.json
+        name: workspace_artifacts
+        path: ${{github.workspace}}
+    - uses: actions/upload-artifact@v2
+      with:
+        name: home-artifacts
+        path: /home/runner/work/_temp/_github_home
+#       uses: actions/upload-artifact@v2
+#       with:
+#          name: eze_reports
+#          path: |
+#              ./reports/python/eze_junit_report.xml
+#              ./reports/python/eze_report.json
