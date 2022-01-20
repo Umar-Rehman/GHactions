@@ -6,9 +6,11 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      with:
+        path: src
       
     - name: run dockerfile
-      uses: ./
+      uses: ./src
 #       run: |
 #         chmod ugo+rwx .
 #         docker pull riversafe/eze-cli:latest
