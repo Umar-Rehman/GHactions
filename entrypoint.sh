@@ -1,4 +1,4 @@
 #!/bin/sh
-eze test
-cd reports/python
+# eze test
+# cd reports/python
 ls -a
