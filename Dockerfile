@@ -5,7 +5,7 @@ USER root
 RUN mkdir -p /data/reports
 RUN chown ezeuser /data/reports
 COPY . .
-RUN chmod +x ./entrypoint.sh
+RUN chown ezeuser ./entrypoint.sh
 
 # RUN ls -a
 # Change User
