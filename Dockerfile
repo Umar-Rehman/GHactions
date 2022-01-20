@@ -4,8 +4,9 @@ WORKDIR /data
 USER root
 RUN mkdir -p /data/reports
 RUN chown ezeuser /data/reports
-RUN chown ezeuser ./entrypoint.sh
 COPY . .
+RUN chown ezeuser ./entrypoint.sh
+
 # RUN ls -a
 # Change User
 USER ezeuser
