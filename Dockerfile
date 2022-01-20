@@ -10,4 +10,5 @@ COPY . .
 # USER ezeuser
 # cli eze
 # run with "docker run --rm -v $(pwd -W):/data eze-docker --version"
+USER root
 ENTRYPOINT [ "eze", "test" ]
