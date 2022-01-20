@@ -18,5 +18,5 @@ jobs:
       with:
          name: eze_reports
          path: |
-             ./eze_junit_report.xml
-             ./eze_report.json
+             ./reports/python/eze_junit_report.xml
+             ./reports/python/eze_report.json
