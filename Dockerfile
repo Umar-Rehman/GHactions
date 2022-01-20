@@ -1,4 +1,5 @@
 FROM riversafe/eze-cli:latest
+COPY entrypoint.sh entrypoint.sh
 WORKDIR /data
 # RUN useradd --create-home ezeuser
 USER root
