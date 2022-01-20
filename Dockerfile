@@ -18,10 +18,10 @@ FROM alpine:latest
 # installes required packages for our script
 RUN apk add --no-cache bash docker
 WORKDIR /data
-COPY entrypoint.sh /entrypoint.sh
+COPY . .
 # change permission to execute the script and
 RUN ls -a
 RUN pwd
-RUN chmod a=rwx ./
+# RUN chmod a=rwx ./
 # file to execute when the docker container starts up
 ENTRYPOINT ["/entrypoint.sh"]
