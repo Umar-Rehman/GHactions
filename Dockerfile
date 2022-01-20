@@ -3,7 +3,7 @@ WORKDIR /data
 RUN useradd --create-home ezeuser
 USER root
 RUN mkdir -p /data/reports
-RUN chown -R ezeuser /data/reports
+# RUN chown -R ezeuser /data/reports
 COPY . .
 RUN ls .
 # Change User
