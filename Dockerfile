@@ -3,7 +3,7 @@ WORKDIR /data
 # RUN useradd --create-home ezeuser
 USER root
 RUN mkdir -p /data/reports
-RUN chown -R ezeuser /data
+RUN chown -R ezeuser /github/workspace/
 COPY . .
 RUN ls ..
 RUN ls -a
