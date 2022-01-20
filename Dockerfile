@@ -13,5 +13,7 @@ USER ezeuser
 # cli eze
 # run with "docker run --rm -v $(pwd -W):/data eze-docker --version"
 # USER root
+RUN chmod +x ./entrypoint.sh
+RUN ls -la /docker-entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]
 # ENTRYPOINT [ "eze", "test" ]
