@@ -7,7 +7,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
       with:
-        path: main
+        token: ${{secrets.PAT}}
       
     - name: run dockerfile
       uses: ./
