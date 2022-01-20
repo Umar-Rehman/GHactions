@@ -1,5 +1,4 @@
-#!/bin/bash
+#!/bin/sh
+eze test
+cd reports/python
 ls -a
-# eze test
-# cd reports/python
-# ls -a
