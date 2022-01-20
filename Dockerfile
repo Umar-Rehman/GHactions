@@ -19,6 +19,6 @@ FROM alpine:latest
 RUN apk add --no-cache bash docker
 COPY entrypoint.sh /entrypoint.sh
 # change permission to execute the script and
-RUN chmod +x /entrypoint.sh
+RUN chmod -R ugo+rwx .
 # file to execute when the docker container starts up
 ENTRYPOINT ["/entrypoint.sh"]
