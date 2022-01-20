@@ -1,0 +1,5 @@
+name: 'EZE GitHub Actions'
+description: 'Running EZE Tests on repo through actions'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
