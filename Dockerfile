@@ -10,5 +10,5 @@ RUN ls -a
 USER ezeuser
 # cli eze
 # run with "docker run --rm -v $(pwd -W):/data eze-docker --version"
-# ENTRYPOINT [ "eze", "test" ]
-RUN "$(pwd)":/data eze test
+RUN pwd
+ENTRYPOINT [ "eze", "test" ]
