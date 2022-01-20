@@ -4,8 +4,9 @@ WORKDIR /data
 USER root
 RUN mkdir -p /data/reports
 RUN chown -R ezeuser /data
-COPY . ./data
-RUN ls .
+COPY . .
+RUN ls ..
+RUN ls -a
 # Change User
 USER ezeuser
 # cli eze
