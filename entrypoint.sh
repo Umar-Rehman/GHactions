@@ -2,4 +2,4 @@
 set -e
 docker pull riversafe/eze-cli:latest
 chmod -R ugo+rwx .
-docker run -t -v ${PWD}:/data riversafe/eze-cli test
+sudo docker run -t -v ${PWD}:/data riversafe/eze-cli test
