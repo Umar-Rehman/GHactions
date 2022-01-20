@@ -1,5 +1,4 @@
 FROM riversafe/eze-cli:latest
-COPY entrypoint.sh entrypoint.sh
 WORKDIR /data
 # RUN useradd --create-home ezeuser
 USER root
@@ -12,5 +11,5 @@ USER ezeuser
 # cli eze
 # run with "docker run --rm -v $(pwd -W):/data eze-docker --version"
 # USER root
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 # ENTRYPOINT [ "eze", "test" ]
