@@ -4,21 +4,14 @@ jobs:
   vm:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
+    - name: Checkout Code
       uses: actions/checkout@v2
       with:
         token: ${{secrets.PAT}}
-      
-    - name: run dockerfile
+        
+    - name: Run Dockerfile and EZE Scan
       uses: ./
-#       run: |
-#         chmod ugo+rwx .
-#         docker pull riversafe/eze-cli:latest
-#         docker run -t -v "$(pwd)":/data riversafe/eze-cli test
-    - name: find locations
-      run: |
-        cd reports/python
-        ls -a
+      
     - name: Upload EZE Reports as Artifact'
       if: always()
       uses: actions/upload-artifact@v2
@@ -27,9 +20,3 @@ jobs:
         path: |
           ${{github.workspace}}/eze_report.json
           ${{github.workspace}}/reports
-#       uses: actions/upload-artifact@v2
-#       with:
-#          name: eze_reports
-#          path: |
-#              ./reports/python/eze_junit_report.xml
-#              ./reports/python/eze_report.json
