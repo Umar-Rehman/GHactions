@@ -16,8 +16,7 @@
 # Base image
 FROM alpine:latest
 # installes required packages for our script
-RUN apk add --no-cache bash
-RUN apt-get install docker
+RUN apk add --no-cache bash docker
 COPY entrypoint.sh /entrypoint.sh
 # change permission to execute the script and
 RUN chmod +x /entrypoint.sh
