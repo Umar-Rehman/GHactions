@@ -24,13 +24,9 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: workspace_artifacts
-        path: ${{github.workspace}}
-    - name: upload 2nd artifact
-      if: always()
-      uses: actions/upload-artifact@v2
-      with:
-        name: home-artifacts
-        path: /home/runner/work/_temp/_github_home
+        path: |
+          ${{github.workspace}}/eze_report.json
+          ${{github.workspace}}/reports
 #       uses: actions/upload-artifact@v2
 #       with:
 #          name: eze_reports
