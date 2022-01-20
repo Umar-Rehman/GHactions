@@ -2,8 +2,8 @@ FROM riversafe/eze-cli:latest
 WORKDIR /data
 # RUN useradd --create-home ezeuser
 # USER root
-RUN mkdir -p /data/reports
-RUN chown ezeuser /data/reports
+# RUN mkdir -p /data/reports
+# RUN chown ezeuser /data/reports
 COPY . .
 # RUN ls -a
 # Change User
