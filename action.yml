@@ -4,7 +4,7 @@ inputs:
     eze_command:
         description: 'which command to run with eze'
         required: false
-        default: 'tools'
+        default: 'test'
 runs:
   using: 'docker'
   image: 'Dockerfile'
