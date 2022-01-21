@@ -5,4 +5,7 @@ RUN mkdir -p /data/reports
 RUN chown ezeuser /data/reports
 COPY . .
 USER ezeuser
-ENTRYPOINT [ "eze", "test" ]
+RUN eze test
+RUN ls -a
+RUN cd reports && ls -a
+# ENTRYPOINT [ "eze", "test" ]
