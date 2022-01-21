@@ -1,16 +1,13 @@
 # ========================================
-# EXAMPLE PYTHON TOOL CONFIG
+# TOOL CONFIG
 # ========================================
 [python-bandit]
-SOURCE = "app"
+SOURCE = "src"
 
 [python-piprot]
 REQUIREMENTS_FILES = [
     "requirements.txt"
 ]
-NEWER_MAJOR_SEMVERSION_SEVERITY = "medium"
-NEWER_MINOR_SEMVERSION_SEVERITY = "none"
-NEWER_PATCH_SEMVERSION_SEVERITY = "none"
 IGNORE_BELOW_SEVERITY = "low"
 
 [python-safety]
@@ -18,50 +15,36 @@ REQUIREMENTS_FILES = [
     "requirements.txt"
 ]
 IGNORE_BELOW_SEVERITY = "medium"
-REPORT_FILE = "reports/python/safety-report.json"
 
 [semgrep]
 PRINT_TIMING_INFO = false
-REPORT_FILE = "reports/python/semgrep-report.json"
-EXCLUDE = [
-    "tests",
-    "tests-integration"
-]
 CONFIGS = [
     "p/ci",
     "p/python",
 ]
+EXCLUDE = [
+    "tests"
+]
 
 [trufflehog]
-SOURCE = "."
-REPORT_FILE = "reports/python/truffleHog-report.json"
+SOURCE = "src/"
 
-[python-cyclonedx]
-REQUIREMENTS_FILE = "requirements.txt"
-REPORT_FILE = "reports/python/python-cyclonedx-bom.json"
+[trufflehog.ci]
+INCLUDE_FULL_REASON = false
 
 # ========================================
 # REPORT CONFIG
 # ========================================
-[bom]
-REPORT_FILE = "reports/python/report-cyclonedx-sbom.json"
-
 [console]
-PRINT_SUMMARY_ONLY = true
-
-[json]
-REPORT_FILE = "reports/python/eze_report.json"
-
-[sarif]
-REPORT_FILE = "reports/python/eze_report.sarif"
+PRINT_SUMMARY_ONLY = false
 
 # ========================================
 # SCAN CONFIG
 # ========================================
 [scan]
-tools = ["python-piprot", "python-bandit", "python-safety", "python-cyclonedx", "trufflehog"]
+tools = ["trufflehog", "python-piprot", "python-bandit", "python-safety", "semgrep"]
 reporters = ["console"]
 
-[scan.linux]
-tools = ["python-piprot", "python-bandit", "semgrep", "python-safety", "python-cyclonedx", "trufflehog"]
-reporters = ["json", "console", "bom"]
+[scan.ci]
+tools = ["trufflehog:ci", "python-piprot", "python-bandit", "python-safety", "semgrep"]
+reporters = ["console"]
