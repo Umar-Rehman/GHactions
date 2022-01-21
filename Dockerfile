@@ -7,5 +7,5 @@ COPY . .
 USER ezeuser
 RUN eze test
 RUN ls -a
-RUN cd reports && ls -a
+RUN cd reports/python && ls -a
 # ENTRYPOINT [ "eze", "test" ]
