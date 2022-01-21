@@ -3,3 +3,5 @@ description: 'Running EZE Tests on repo through actions'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    EZE_COMMAND: ${{ inputs.eze_command }}
