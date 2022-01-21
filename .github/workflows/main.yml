@@ -11,8 +11,6 @@ jobs:
         
     - name: Run Dockerfile and EZE Scan
       uses: ./
-      with:
-        eze_command: ${{ github.event.inputs.eze_command }}
       
     - name: Upload EZE Reports as Artifact'
       if: always()
