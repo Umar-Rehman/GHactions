@@ -1,12 +1,5 @@
 name: 'EZE GitHub Actions'
 description: 'Running EZE Tests on repo through actions'
-inputs:
-    eze_command:
-        description: 'which command to run with eze'
-        required: false
-        default: 'test'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-#   args:
-#     - ${{ inputs.eze_command }}
