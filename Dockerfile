@@ -5,7 +5,7 @@ WORKDIR /data
 # RUN chown ezeuser /data/reports
 COPY . .
 USER ezeuser
-RUN eze ${{github.input.eze_command}}
+RUN eze ${{github.events.inputs.eze_command}}
 # RUN ls -a
 # RUN cd reports && ls -a
 # ENTRYPOINT [ "eze", "test" ]
