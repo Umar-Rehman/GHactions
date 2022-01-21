@@ -1,5 +1,5 @@
 FROM riversafe/eze-cli:latest
-ENV COMMAND=${{github.events.inputs.eze_command}}
+ENV COMMAND=${github.events.inputs.eze_command}
 WORKDIR /data
 # USER root
 # RUN mkdir -p /data/reports
